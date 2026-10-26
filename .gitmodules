@@ -7,3 +7,6 @@
 [submodule "upstream/onlook"]
 	path = upstream/onlook
 	url = https://github.com/onlook-dev/onlook.git
+[submodule "upstream/deepseek-harness"]
+	path = upstream/deepseek-harness
+	url = https://github.com/deepseek-ai/deepseek-harness.git
