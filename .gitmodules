@@ -1,0 +1,9 @@
+[submodule "upstream/sandboxd"]
+	path = upstream/sandboxd
+	url = https://github.com/tastyeffectco/sandboxd.git
+[submodule "upstream/opencode"]
+	path = upstream/opencode
+	url = https://github.com/anomalyco/opencode.git
+[submodule "upstream/onlook"]
+	path = upstream/onlook
+	url = https://github.com/onlook-dev/onlook.git
