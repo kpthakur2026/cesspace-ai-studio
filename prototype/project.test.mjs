@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {PrototypeWorkspace} from './project.mjs';
+const generator=async prompt=>({html:'<main>'+prompt+'</main>',mode:'fixture'});
+const w=new PrototypeWorkspace({generator,maxProjects:1});
+const p=await w.create('Landing page');
+assert.equal(p.revision,1);
+const edited=await w.edit(p.id,'Blue theme',1);
+assert.equal(edited.revision,2);assert.match(edited.html,/Blue theme/);
+await assert.rejects(w.edit(p.id,'Stale edit',1),/Revision conflict/);
+const restored=w.restore(p.id,1,2);assert.equal(restored.revision,3);assert.equal(restored.html,p.html);
+await assert.rejects(w.create('Second project'),/capacity/);
+assert.throws(()=>w.get('notfound'),/not found/);
+console.log('PASS: create, edit, revision conflict, restore, limits');
