@@ -20,4 +20,4 @@ jobs:
       - name: Syntax
         run: node --check prototype/server.mjs
       - name: Unit tests
-        run: node prototype/test.mjs
+        run: node prototype/test.mjs && node prototype/project.test.mjs
